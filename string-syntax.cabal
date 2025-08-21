@@ -1,6 +1,6 @@
 cabal-version: 1.12
 
--- This file has been generated from package.yaml by hpack version 0.37.0.
+-- This file has been generated from package.yaml by hpack version 0.38.1.
 --
 -- see: https://github.com/sol/hpack
 
@@ -56,4 +56,18 @@ executable string-syntax
       base
     , string-syntax
     , text
+  default-language: GHC2021
+
+benchmark builders
+  type: exitcode-stdio-1.0
+  main-is: Builders.hs
+  hs-source-dirs:
+      bench/
+  ghc-options: -Wall -Wcompat -Wincomplete-record-updates -Wincomplete-uni-patterns -Wnoncanonical-monad-instances
+  build-depends:
+      base
+    , criterion
+    , filepath
+    , process
+    , unliftio
   default-language: GHC2021

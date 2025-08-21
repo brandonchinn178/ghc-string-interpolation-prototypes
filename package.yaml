@@ -38,3 +38,16 @@ executable:
     - string-syntax
     - text
   language: GHC2021
+
+benchmarks:
+  builders:
+    source-dirs: bench/
+    main: Builders.hs
+    other-modules: []
+    dependencies:
+      - base
+      - criterion
+      - filepath
+      - process
+      - unliftio
+    language: GHC2021
