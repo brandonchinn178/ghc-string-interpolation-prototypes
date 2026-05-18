@@ -135,6 +135,15 @@ allModes =
       , processRaw = \s -> "Left " <> showT s
       , processExpr = \expr -> "Right (XX.HasClass (" <> expr <> "))"
       }
+  , InterpolationMode -- TODO: use interpolateAppend (possibly use the proposal functions throughout?)
+      { name = "uniform-interpolate-builder"
+      , autoModules = ["Data.String.Syntax.UniformInterpolateBuilder"]
+      , autoLangExts = []
+      , delimMarker = OnlyDelim "s"
+      , postProcess = \_ exprs -> "interpolateFinalize (mconcat " <> exprs <> ")"
+      , processRaw = \s -> "interpolateString " <> showT s
+      , processExpr = \expr -> "interpolateValue (" <> expr <> ")"
+      }
   ]
 
 showT :: Show a => a -> Text

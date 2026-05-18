@@ -87,3 +87,17 @@ executable implicit-no-builder
     , string-syntax
     , text
   default-language: GHC2021
+
+executable uniform-interpolate-builder
+  hs-source-dirs: uniform-interpolate-builder, shared
+  main-is: main.hs
+  other-modules: StringLib, Lib
+  ghc-options:
+    -Wall -Wcompat
+    -F -pgmF string-syntax -optF uniform-interpolate-builder
+  build-tool-depends: string-syntax:string-syntax
+  build-depends:
+      base >=4.14 && <5
+    , string-syntax
+    , text
+  default-language: GHC2021

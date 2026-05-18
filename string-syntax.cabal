@@ -31,7 +31,9 @@ library
       Data.String.Syntax.ImplicitBuilder
       Data.String.Syntax.ImplicitNoBuilder
       Data.String.Syntax.ImplicitOnlyString
+      Data.String.Syntax.Internal.FixedUTF8Writer
       Data.String.Syntax.Internal.Parse
+      Data.String.Syntax.UniformInterpolateBuilder
   other-modules:
       Paths_string_syntax
   hs-source-dirs:
